@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barsaloppet - Competition map</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(135deg, #1e3a8a 0%, #dc2626 100%) fixed;
+            color: #1f2937;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .card {
+            width: min(760px, 95vw);
+            background: rgba(255, 255, 255, 0.96);
+            border-radius: 24px;
+            padding: 1.7rem;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+        }
+
+        h1 {
+            margin-top: 0;
+            color: #1e3a8a;
+        }
+
+        .map-box {
+            border: 0;
+            padding: 0;
+            background: transparent;
+            text-align: center;
+        }
+
+        .map-image {
+            display: block;
+            width: 100%;
+            max-width: 680px;
+            height: auto;
+            margin: 0 auto;
+            border-radius: 12px;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+        }
+
+        .map-caption {
+            margin: 0.8rem auto 0;
+            max-width: 680px;
+            text-align: center;
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 1rem;
+            text-decoration: none;
+            color: #fff;
+            background: #1e3a8a;
+            padding: 10px 16px;
+            border-radius: 999px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <main class="card">
+        <h1>Sträcka</h1>
+        <div class="map-box">
+            <img class="map-image" src="images/karta.png" alt="Karta över Bärsaloppets sträcka">
+        </div>
+        <p class="map-caption">Här ser du tävlingskartan för Bärsaloppet.</p>
+        <p>Sträckan för loppet som följer den röda linjen. Det finns fem stationer markerade med grönt:</p>
+        <ul>
+            <li>Station 1: Rött</li>
+            <li>Station 2: Kebabnekajse</li>
+            <li>Station 3: Gröna elken</li>
+            <li>Station 4: Lottas</li>
+            <li>Station 5: Pinchos</li>
+        </ul>
+        <a href="index.html">Tillbaka till startsidan</a>
+    </main>
+</body>
+</html>

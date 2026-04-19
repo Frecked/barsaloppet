@@ -18,6 +18,7 @@
         }
 
         .container {
+            position: relative;
             background: rgba(255, 255, 255, 0.96); 
             padding: 3rem 1.5rem;
             border-radius: 40px; 
@@ -79,38 +80,71 @@
             opacity: 0.9;
         }
 
-        .rules-section {
-            margin-top: 2rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid #ddd;
+        .menu-wrap {
+            margin: 0;
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            display: block;
         }
 
-        .rules-section h2 {
-            color: #1e3a8a;
-            font-size: 1.3rem;
-            text-transform: uppercase;
-            margin-bottom: 0.8rem;
+        .menu-button {
+            background: #1e3a8a;
+            border: 1px solid #172e6d;
+            border-radius: 12px;
+            width: 48px;
+            height: 42px;
+            padding: 8px;
+            cursor: pointer;
+            display: inline-flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 10px 25px rgba(30, 58, 138, 0.35);
+            transition: transform 120ms ease, box-shadow 120ms ease;
         }
 
-        .rules-list {
+        .menu-line {
+            width: 100%;
+            height: 3px;
+            border-radius: 999px;
+            background: #fff;
+            display: block;
+        }
+
+        .menu-button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 14px 30px rgba(30, 58, 138, 0.45);
+        }
+
+        .menu-list {
             list-style: none;
-            padding: 0;
-            display: inline-block;
+            margin: 10px 0 0;
+            padding: 8px;
+            border-radius: 14px;
+            background: #fff;
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.2);
+            min-width: 210px;
             text-align: left;
-        }
-
-        .rules-list li {
-            font-size: 0.85rem;
-            margin-bottom: 8px;
-            color: #555;
-            position: relative;
-            padding-left: 25px;
-        }
-
-        .rules-list li::before {
-            content: "🍺";
             position: absolute;
             left: 0;
+            z-index: 10;
+        }
+
+        .menu-list[hidden] {
+            display: none;
+        }
+
+        .menu-list a {
+            display: block;
+            text-decoration: none;
+            color: #1e1b4b;
+            font-weight: 700;
+            padding: 9px 10px;
+            border-radius: 8px;
+        }
+
+        .menu-list a:hover {
+            background: #f3f4f6;
         }
 
         .footer {
@@ -166,16 +200,19 @@
             <div class="countdown-item"><span class="countdown-number" id="seconds">00</span><span class="countdown-label">Sek</span></div>
         </div>
 
-        <section class="rules-section">
-            <h2>Tävlingsregler</h2>
-            <ul class="rules-list">
-                <li>Deltagare måste vara minst 18 år fyllda.</li>
-                <li>Hela banan måste genomföras till fots.</li>
-                <li>Öl/dryck får endast förtäras vid stationerna.</li>
-                <li>Sportsligt uppträdande krävs av alla.</li>
-                <li>Håll naturen ren – släng inget skräp på banan.</li>
+        <div class="menu-wrap">
+            <button class="menu-button" id="menuButton" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Open menu">
+                <span class="menu-line"></span>
+                <span class="menu-line"></span>
+                <span class="menu-line"></span>
+            </button>
+            <ul class="menu-list" id="menuList" hidden>                
+                
+                <li><a href="map.html">Tävlingskarta</a></li>
+                <li><a href="rules.html">Regler</a></li>
+                <li><a href="about-us.html">About us</a></li>
             </ul>
-        </section>
+        </div>
 
         <footer class="footer">
             <div class="sponsor-title">Stolta Sponsorer</div>
@@ -196,6 +233,26 @@
               elMin = document.getElementById("minutes"),
               elSec = document.getElementById("seconds"),
               elContainer = document.getElementById("countdown");
+        const menuButton = document.getElementById("menuButton");
+        const menuList = document.getElementById("menuList");
+
+        menuButton.addEventListener("click", () => {
+            const isHidden = menuList.hasAttribute("hidden");
+            if (isHidden) {
+                menuList.removeAttribute("hidden");
+                menuButton.setAttribute("aria-expanded", "true");
+            } else {
+                menuList.setAttribute("hidden", "");
+                menuButton.setAttribute("aria-expanded", "false");
+            }
+        });
+
+        document.addEventListener("click", (event) => {
+            if (!event.target.closest(".menu-wrap")) {
+                menuList.setAttribute("hidden", "");
+                menuButton.setAttribute("aria-expanded", "false");
+            }
+        });
 
         const updateTimer = setInterval(() => {
             const diff = targetDate - new Date().getTime();

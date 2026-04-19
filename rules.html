@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Barsaloppet - Regler</title>
+	<style>
+		body {
+			font-family: 'Segoe UI', system-ui, sans-serif;
+			margin: 0;
+			min-height: 100vh;
+			display: grid;
+			place-items: center;
+			background: linear-gradient(135deg, #1e3a8a 0%, #dc2626 100%) fixed;
+			color: #1f2937;
+			padding: 20px;
+			box-sizing: border-box;
+		}
+
+		.card {
+			width: min(760px, 95vw);
+			background: rgba(255, 255, 255, 0.96);
+			border-radius: 24px;
+			padding: 1.7rem;
+			box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+		}
+
+		h1 {
+			margin-top: 0;
+			color: #1e3a8a;
+		}
+
+		.rules-list {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		.rules-list li {
+			font-size: 1rem;
+			margin-bottom: 12px;
+			color: #555;
+			position: relative;
+			padding-left: 28px;
+		}
+
+		.rules-list li::before {
+			content: "🍺";
+			position: absolute;
+			left: 0;
+		}
+
+		a {
+			display: inline-block;
+			margin-top: 1rem;
+			text-decoration: none;
+			color: #fff;
+			background: #1e3a8a;
+			padding: 10px 16px;
+			border-radius: 999px;
+			font-weight: 700;
+		}
+	</style>
+</head>
+<body>
+	<main class="card">
+		<h1>Tävlingsregler</h1>
+		<ul class="rules-list">
+			<li>Deltagare måste vara minst 18 år fyllda.</li>
+			<li>Hela banan måste genomföras till fots.</li>
+			<li>Öl/dryck får endast förtäras vid stationerna.</li>
+			<li>Sportsligt uppträdande krävs av alla.</li>
+			<li>Håll naturen ren – släng inget skräp på banan.</li>
+		</ul>
+		<a href="index.html">Tillbaka till startsidan</a>
+	</main>
+</body>
+</html>
