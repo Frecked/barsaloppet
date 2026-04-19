@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bärsaloppet - Est 2026</title>
+    <link rel="icon" type="image/png" href="favicon-32x32.png">
+    <style>
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            margin: 0;
+            display: grid;
+            place-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1e3a8a 0%, #dc2626 100%) fixed;
+            padding: 20px 0;
+            color: #333;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.96); 
+            padding: 3rem 1.5rem;
+            border-radius: 40px; 
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+            text-align: center;
+            width: 85%; /* Grundbredd för mobil */
+            max-width: 900px;
+            box-sizing: border-box;
+        }
+
+        .logo-text {
+            font-size: clamp(1.5rem, 10vw, 5.6rem); 
+            font-weight: 900;
+            color: #1e3a8a;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            line-height: 1;
+            border-bottom: 6px solid #f39c12;
+            padding-bottom: 5px;
+            display: inline-block;
+            white-space: nowrap;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.4;
+            color: #444;
+            margin: 1.2rem auto 0;
+            max-width: 500px;
+            font-weight: 500;
+        }
+
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin: 1.5rem auto 0;
+            max-width: 450px;
+        }
+
+        .countdown-item {
+            background: #1e1b4b; 
+            color: #fff;
+            padding: 12px 2px;
+            border-radius: 12px;
+            flex: 1;
+        }
+
+        .countdown-number {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .countdown-label {
+            font-size: 0.55rem;
+            text-transform: uppercase;
+            opacity: 0.9;
+        }
+
+        .rules-section {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #ddd;
+        }
+
+        .rules-section h2 {
+            color: #1e3a8a;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            margin-bottom: 0.8rem;
+        }
+
+        .rules-list {
+            list-style: none;
+            padding: 0;
+            display: inline-block;
+            text-align: left;
+        }
+
+        .rules-list li {
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+            color: #555;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .rules-list li::before {
+            content: "🍺";
+            position: absolute;
+            left: 0;
+        }
+
+        .footer {
+            margin-top: 2rem;
+            padding-top: 1.2rem;
+            border-top: 1px dashed #ccc;
+        }
+
+        .sponsor-title {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #999;
+            margin-bottom: 1rem;
+        }
+
+        .sponsor-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            font-weight: bold;
+            font-size: 0.85rem;
+            color: #444;
+        }
+
+        .copyright {
+            margin-top: 1.5rem;
+            font-size: 0.7rem;
+            color: #bbb;
+        }
+
+        @media (min-width: 601px) {
+            .container { width: 90%; } /* Bredare på desktop */
+        }
+
+        @media (max-width: 600px) {
+            .container { border-radius: 30px; padding: 2rem 1rem; }
+            .logo-text { border-bottom-width: 4px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="logo-text">BÄRSALOPPET</h1>
+        <p>Välkommen till den officiella hemsidan för Bärsaloppet!</p>
+
+        <div class="countdown-container" id="countdown">
+            <div class="countdown-item"><span class="countdown-number" id="days">00</span><span class="countdown-label">Dagar</span></div>
+            <div class="countdown-item"><span class="countdown-number" id="hours">00</span><span class="countdown-label">Tim</span></div>
+            <div class="countdown-item"><span class="countdown-number" id="minutes">00</span><span class="countdown-label">Min</span></div>
+            <div class="countdown-item"><span class="countdown-number" id="seconds">00</span><span class="countdown-label">Sek</span></div>
+        </div>
+
+        <section class="rules-section">
+            <h2>Tävlingsregler</h2>
+            <ul class="rules-list">
+                <li>Deltagare måste vara minst 18 år fyllda.</li>
+                <li>Hela banan måste genomföras till fots.</li>
+                <li>Öl/dryck får endast förtäras vid stationerna.</li>
+                <li>Sportsligt uppträdande krävs av alla.</li>
+                <li>Håll naturen ren – släng inget skräp på banan.</li>
+            </ul>
+        </section>
+
+        <footer class="footer">
+            <div class="sponsor-title">Stolta Sponsorer</div>
+            <div class="sponsor-grid">
+                <span>💍 SAGAN I RINGEN</span>
+                <span>🃏 GANG WEED</span>
+                <span>☁️ PABLO ESCOBAR</span>
+                <span>🎮 NYA FREEDOM SERVER 1769</span>
+            </div>
+            <div class="copyright">© 2026 Bärsaloppet.</div>
+        </footer>
+    </div>
+
+    <script>
+        const targetDate = new Date("Sep 8, 2026 10:00:00").getTime();
+        const elDays = document.getElementById("days"),
+              elHours = document.getElementById("hours"),
+              elMin = document.getElementById("minutes"),
+              elSec = document.getElementById("seconds"),
+              elContainer = document.getElementById("countdown");
+
+        const updateTimer = setInterval(() => {
+            const diff = targetDate - new Date().getTime();
+            if (diff < 0) {
+                clearInterval(updateTimer);
+                elContainer.textContent = "LOPPET HAR STARTAT!";
+                return;
+            }
+            elDays.textContent = Math.floor(diff / 86400000);
+            elHours.textContent = Math.floor((diff % 86400000) / 3600000);
+            elMin.textContent = Math.floor((diff % 3600000) / 60000);
+            elSec.textContent = Math.floor((diff % 60000) / 1000);
+        }, 1000);
+    </script>
+</body>
+</html>
