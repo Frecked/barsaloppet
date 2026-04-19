@@ -1,0 +1,25 @@
+# macOS system files
+.DS_Store
+*.DS_Store
+
+# Windows system files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
+
+# Logs
+*.log
+
+# Node-related (in case you ever add tooling later)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build output (if you add a build system later)
+dist/
+build/
