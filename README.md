@@ -1,4 +1,4 @@
-# Barsaloppet
+# [Barsaloppet.se](https://barsaloppet.se) 
 Website for the Barsaloppet project, deployed automatically to InfinityFree using GitHub Actions.
 
 ## Features
