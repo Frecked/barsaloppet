@@ -13,13 +13,3 @@ Desktop.ini
 
 # Logs
 *.log
-
-# Node-related (in case you ever add tooling later)
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Build output (if you add a build system later)
-dist/
-build/
