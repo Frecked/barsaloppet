@@ -48,6 +48,15 @@
             box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
         }
 
+        .map-link {
+            display: inline-block;
+            cursor: zoom-in;
+            margin-top: 0;
+            background: transparent;
+            padding: 0;
+            border-radius: 0;
+        }
+
         .map-caption {
             margin: 0.8rem auto 0;
             max-width: 680px;
@@ -57,7 +66,7 @@
             line-height: 1.4;
         }
 
-        a {
+        .back-link {
             display: inline-block;
             margin-top: 1rem;
             text-decoration: none;
@@ -67,24 +76,105 @@
             border-radius: 999px;
             font-weight: 700;
         }
+
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.86);
+            z-index: 1000;
+        }
+
+        .lightbox.open {
+            display: flex;
+        }
+
+        .lightbox-image {
+            max-width: min(1200px, 95vw);
+            max-height: 90vh;
+            width: auto;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            border: 0;
+            border-radius: 999px;
+            width: 42px;
+            height: 42px;
+            font-size: 1.6rem;
+            line-height: 1;
+            cursor: pointer;
+            color: #111;
+            background: #fff;
+        }
     </style>
 </head>
 <body>
     <main class="card">
-        <h1>Sträcka</h1>
+        <h1>Tävlingskarta</h1>
         <div class="map-box">
-            <img class="map-image" src="images/karta.png" alt="Karta över Bärsaloppets sträcka">
+            <a id="mapLink" class="map-link" href="images/uppdaterad map.png" aria-label="Förstora kartan" aria-controls="mapLightbox">
+                <img class="map-image" src="images/uppdaterad map.png" alt="Karta över Bärsaloppets sträcka">
+            </a>
         </div>
-        <p class="map-caption">Här ser du tävlingskartan för Bärsaloppet.</p>
-        <p>Sträckan för loppet som följer den röda linjen. Det finns fem stationer markerade med grönt:</p>
+        <p class="map-caption">Här ser du tävlingskartan för Bärsaloppet. Klicka på kartan för att förstora.</p>
+        <p>Sträckan för loppet följer den blåa linjen i färdriktning med de röda pilarna. Start, mål och samtliga stationer är markerade 
+            med siffror:</p>
         <ul>
-            <li>Station 1: Rött</li>
-            <li>Station 2: Kebabnekajse</li>
-            <li>Station 3: Gröna elken</li>
-            <li>Station 4: Lottas</li>
-            <li>Station 5: Pinchos</li>
+            <li><strong>Start</strong>: Rött</li>
+            <li>Station 1: Gröna älgen</li>
+            <li>Station 2: Taps&Tacos</li>
+            <li>Station 3: Droskan</li>
+            <li>Station 4: Lottas Krog & Pub</li>
+            <li><strong>Mål</strong>: Rex Umeå</li>
         </ul>
-        <a href="index.html">Tillbaka till startsidan</a>
+        <a class="back-link" href="index.html">Tillbaka till startsidan</a>
     </main>
+
+    <div id="mapLightbox" class="lightbox" aria-hidden="true">
+        <button id="closeLightbox" class="lightbox-close" type="button" aria-label="Stäng förstoring">&times;</button>
+        <img class="lightbox-image" src="images/uppdaterad map.png" alt="Förstorad tävlingskarta för Bärsaloppet">
+    </div>
+
+    <script>
+        const mapLink = document.getElementById('mapLink');
+        const mapLightbox = document.getElementById('mapLightbox');
+        const closeLightbox = document.getElementById('closeLightbox');
+
+        function closeMapLightbox() {
+            mapLightbox.classList.remove('open');
+            mapLightbox.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        }
+
+        mapLink.addEventListener('click', function (event) {
+            event.preventDefault();
+            mapLightbox.classList.add('open');
+            mapLightbox.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeLightbox.addEventListener('click', closeMapLightbox);
+
+        mapLightbox.addEventListener('click', function (event) {
+            if (event.target === mapLightbox) {
+                closeMapLightbox();
+            }
+        });
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape' && mapLightbox.classList.contains('open')) {
+                closeMapLightbox();
+            }
+        });
+    </script>
 </body>
 </html>
