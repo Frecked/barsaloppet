@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="sv">
+
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6ES5C7PBNM"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-6ES5C7PBNM');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bärsaloppet - Est 2026</title>
@@ -19,18 +29,19 @@
 
         .container {
             position: relative;
-            background: rgba(255, 255, 255, 0.96); 
+            background: rgba(255, 255, 255, 0.96);
             padding: 3rem 1.5rem;
-            border-radius: 40px; 
+            border-radius: 40px;
             box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
             text-align: center;
-            width: 85%; /* Grundbredd för mobil */
+            width: 85%;
+            /* Grundbredd för mobil */
             max-width: 900px;
             box-sizing: border-box;
         }
 
         .logo-text {
-            font-size: clamp(1.5rem, 10vw, 5.6rem); 
+            font-size: clamp(1.5rem, 10vw, 5.6rem);
             font-weight: 900;
             color: #1e3a8a;
             margin: 0;
@@ -61,7 +72,7 @@
         }
 
         .countdown-item {
-            background: #1e1b4b; 
+            background: #1e1b4b;
             color: #fff;
             padding: 12px 2px;
             border-radius: 12px;
@@ -178,12 +189,22 @@
         }
 
         @media (min-width: 601px) {
-            .container { width: 90%; } /* Bredare på desktop */
+            .container {
+                width: 90%;
+            }
+
+            /* Bredare på desktop */
         }
 
         @media (max-width: 600px) {
-            .container { border-radius: 30px; padding: 2.8rem 1rem 2rem; }
-            .logo-text { border-bottom-width: 4px; }
+            .container {
+                border-radius: 30px;
+                padding: 2.8rem 1rem 2rem;
+            }
+
+            .logo-text {
+                border-bottom-width: 4px;
+            }
 
             .menu-wrap {
                 position: fixed;
@@ -211,29 +232,35 @@
         }
     </style>
 </head>
+
 <body>
 
     <div class="container">
-        <h1 class="logo-text">BÄRSALOPPET</h1>        
+        <h1 class="logo-text">BÄRSALOPPET</h1>
         <p>Välkommen till den officiella hemsidan för Bärsaloppet!</p>
 
         <h2>20 juli 2026</h2>
 
         <div class="countdown-container" id="countdown">
-            <div class="countdown-item"><span class="countdown-number" id="days">00</span><span class="countdown-label">Dagar</span></div>
-            <div class="countdown-item"><span class="countdown-number" id="hours">00</span><span class="countdown-label">Tim</span></div>
-            <div class="countdown-item"><span class="countdown-number" id="minutes">00</span><span class="countdown-label">Min</span></div>
-            <div class="countdown-item"><span class="countdown-number" id="seconds">00</span><span class="countdown-label">Sek</span></div>
+            <div class="countdown-item"><span class="countdown-number" id="days">00</span><span
+                    class="countdown-label">Dagar</span></div>
+            <div class="countdown-item"><span class="countdown-number" id="hours">00</span><span
+                    class="countdown-label">Tim</span></div>
+            <div class="countdown-item"><span class="countdown-number" id="minutes">00</span><span
+                    class="countdown-label">Min</span></div>
+            <div class="countdown-item"><span class="countdown-number" id="seconds">00</span><span
+                    class="countdown-label">Sek</span></div>
         </div>
 
         <div class="menu-wrap">
-            <button class="menu-button" id="menuButton" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Open menu">
+            <button class="menu-button" id="menuButton" type="button" aria-haspopup="true" aria-expanded="false"
+                aria-label="Open menu">
                 <span class="menu-line"></span>
                 <span class="menu-line"></span>
                 <span class="menu-line"></span>
             </button>
-            <ul class="menu-list" id="menuList" hidden>                
-                
+            <ul class="menu-list" id="menuList" hidden>
+
                 <li><a href="map.html">Tävlingskarta</a></li>
                 <li><a href="rules.html">Regler</a></li>
                 <li><a href="about-us.html">About us</a></li>
@@ -256,10 +283,10 @@
     <script>
         const targetDate = new Date("July 20, 2026 10:00:00").getTime();
         const elDays = document.getElementById("days"),
-              elHours = document.getElementById("hours"),
-              elMin = document.getElementById("minutes"),
-              elSec = document.getElementById("seconds"),
-              elContainer = document.getElementById("countdown");
+            elHours = document.getElementById("hours"),
+            elMin = document.getElementById("minutes"),
+            elSec = document.getElementById("seconds"),
+            elContainer = document.getElementById("countdown");
         const menuButton = document.getElementById("menuButton");
         const menuList = document.getElementById("menuList");
 
@@ -295,4 +322,5 @@
         }, 1000);
     </script>
 </body>
+
 </html>

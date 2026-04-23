@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="sv">
+
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6ES5C7PBNM"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-6ES5C7PBNM');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Barsaloppet - Competition map</title>
@@ -117,16 +127,19 @@
         }
     </style>
 </head>
+
 <body>
     <main class="card">
         <h1>Tävlingskarta</h1>
         <div class="map-box">
-            <a id="mapLink" class="map-link" href="images/uppdaterad map.png" aria-label="Förstora kartan" aria-controls="mapLightbox">
+            <a id="mapLink" class="map-link" href="images/uppdaterad map.png" aria-label="Förstora kartan"
+                aria-controls="mapLightbox">
                 <img class="map-image" src="images/uppdaterad map.png" alt="Karta över Bärsaloppets sträcka">
             </a>
         </div>
         <p class="map-caption">Här ser du tävlingskartan för Bärsaloppet. Klicka på kartan för att förstora.</p>
-        <p>Sträckan för loppet följer den blåa linjen i färdriktning med de röda pilarna. Start, mål och samtliga stationer är markerade 
+        <p>Sträckan för loppet följer den blåa linjen i färdriktning med de röda pilarna. Start, mål och samtliga
+            stationer är markerade
             med siffror:</p>
         <ul>
             <li><strong>Start</strong>: Rött</li>
@@ -177,4 +190,5 @@
         });
     </script>
 </body>
+
 </html>
