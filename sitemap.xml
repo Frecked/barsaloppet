@@ -6,17 +6,17 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://barsaloppet.se/map.html</loc>
+    <loc>https://barsaloppet.se/map</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://barsaloppet.se/rules.html</loc>
+    <loc>https://barsaloppet.se/rules</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://barsaloppet.se/about-us.html</loc>
+    <loc>https://barsaloppet.se/about-us</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
